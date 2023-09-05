@@ -2,18 +2,21 @@ import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import {
   Button,
+  Pressable,
   StyleSheet,
+  Text,
   TextInput,
   TouchableOpacity,
   View,
-  Text,
 } from "react-native";
+import * as Speech from "expo-speech";
 
 export default function App() {
   const [nome, setNome] = useState("");
 
-  const mostraN = () => {
-    alert("Nome: " + nome);
+  const mostrarNome = () => {
+    alert("Nome da pessoa: " + nome);
+    Speech.speak("ola voce digitou " + nome, { language: "pt-BR" });
   };
 
   return (
@@ -22,27 +25,36 @@ export default function App() {
         <TextInput
           style={meuestilo.input}
           placeholder="Digite o Nome"
-          onChangeText={(nome) => setNome(nome)}
+          onChangeText={(par) => setNome(par)}
           value={nome}
         ></TextInput>
-      </View>
 
-      <TouchableOpacity style={meuestilo.buttonContainer}>
-        <Text
-          onPress={mostraN}
+        <TouchableOpacity
+          onPress={mostrarNome}
           onLongPress={() => alert("clique simples da proxima vez")}
-          style={[
-            meuestilo.button,
-            meuestilo.buttonOutline,
-            meuestilo.buttonOutlineText,
-            meuestilo.buttonText,
-          ]}
+          style={[meuestilo.button, meuestilo.buttonOutline]}
         >
-          Capturar
-        </Text>
-      </TouchableOpacity>
+          <Text style={meuestilo.buttonOutlineText}>Capturar</Text>
+        </TouchableOpacity>
 
-      <StatusBar style="auto" />
+        <TouchableOpacity
+          onPress={mostrarNome}
+          onLongPress={() => alert("clique simples da proxima vez")}
+          style={meuestilo.button}
+        >
+          <Text style={meuestilo.buttonText}>Capturar</Text>
+        </TouchableOpacity>
+
+        <Pressable
+          onPress={mostrarNome}
+          onLongPress={() => alert("clique simples da proxima vez")}
+          style={meuestilo.button}
+        >
+          <Text style={meuestilo.buttonText}>Capturar</Text>
+        </Pressable>
+
+        <StatusBar style="auto" />
+      </View>
     </View>
   );
 }
@@ -76,18 +88,19 @@ const meuestilo = StyleSheet.create({
     padding: 15,
     borderRadius: 10,
     alignItems: "center",
+    marginTop: 5,
   },
   buttonOutline: {
     backgroundColor: "white",
     marginTop: 5,
     borderColor: "#0782F9",
     borderWidth: 2,
+    marginTop: 5,
   },
   buttonText: {
-    color: "#0782F9",
+    color: "white",
     fontWeight: "700",
     fontSize: 16,
-    textAlign: "center",
   },
   buttonOutlineText: {
     color: "#0782F9",
