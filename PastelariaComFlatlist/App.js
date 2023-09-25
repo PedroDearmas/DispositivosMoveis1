@@ -19,17 +19,20 @@ const DATA = [
     title: "Dinheiro",
     imageUri:
       "https://static.vecteezy.com/system/resources/previews/019/049/680/non_2x/money-symbol-icon-png.png",
+    percentual: 0.1,
   },
   {
     id: "2",
     title: "Cartao",
     imageUri:
       "https://static.vecteezy.com/system/resources/previews/010/147/665/non_2x/credit-card-icon-sign-symbol-design-free-png.png",
+    percentual: 0.05,
   },
   {
     id: "3",
     title: "Pix",
     imageUri: "https://devtools.com.br/img/pix/logo-pix-png-icone-520x520.png",
+    percentual: 0,
   },
 ];
 
@@ -44,15 +47,22 @@ export default function App() {
   const pastelvent = 8.0;
   let resultado = 0;
 
-  const soma = () => {
-    resultado =
+  const soma = (item) => {
+    let total =
       parseFloat(valor1 ?? 0) * pastelcarn +
       parseFloat(valor2 ?? 0) * pastelfran +
       parseFloat(valor3 ?? 0) * pastelquei +
       parseFloat(valor4 ?? 0) * pastelvent;
+
+    const desconto = total * item.percentual;
+    if (item.id === "1") {
+      resultado = total - desconto;
+    } else {
+      resultado = total + desconto;
+    }
     if (resultado > 0) {
-      alert("O valor do pedido foi de R$" + resultado);
-      Speech.speak("O valor do pedido foi de " + resultado + "reais", {
+      alert("O valor do pedido foi de R$" + resultado.toFixed(2));
+      Speech.speak("O valor do pedido foi de R$ " + resultado.toFixed(2), {
         language: "pt-BR",
       });
     } else {
@@ -72,10 +82,10 @@ export default function App() {
             meuestilo.title,
           ]}
           onLongPress={() => {
-            soma();
+            soma(item);
           }}
           onPress={() => {
-            soma();
+            soma(item);
           }}
         >
           <View style={meuestilo.detalheItem}>
