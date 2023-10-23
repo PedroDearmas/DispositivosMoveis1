@@ -20,7 +20,7 @@ export default function UnipampaMaps() {
             latitude: -31.306217,
             longitude: -54.064696,
           }}
-          title={"IFSUL - Campus Bagé"}
+          title={"Unipampa - Campus Bagé"}
           description={"Instituição"}
         ></Marker>
       </MapView>
