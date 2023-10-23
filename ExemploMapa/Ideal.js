@@ -20,7 +20,7 @@ export default function IdealMaps() {
             latitude: -31.375631,
             longitude: -54.104999,
           }}
-          title={"IFSUL - Campus Bagé"}
+          title={"Ideal"}
           description={"Instituição"}
         ></Marker>
       </MapView>
