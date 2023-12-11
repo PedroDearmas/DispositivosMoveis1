@@ -2,38 +2,37 @@ import { View, Text, Pressable, Image, StatusBar, StyleSheet, SafeAreaView, Flat
 import React, { useState } from 'react'
 import Card from '../Components/Card'
 import { ICard } from '../Components/types';
-import Confirmação from './Confirmação';
 
 const DATA = [
     {
         id: '1',
-        title: 'Camiseta da Seleção Brasil',
-        uri: 'https://images.tcdn.com.br/img/img_prod/1050340/camisa_i_selecao_brasileira_22_23_versao_fan_2169_1_23a746b83aa942fe995182dc95d48c04.jpg',
-        preco: 119.99
+        title: 'Bola de Futsal Penalty Rx 500',
+        uri: 'https://imgcentauro-a.akamaihd.net/768x768/M0VUC139.jpg',
+        preco: 87.99
     },
     {
         id: '2',
-        title: 'Camiseta da Seleção Uruguai',
-        uri: 'https://images.tcdn.com.br/img/img_prod/1050340/camisa_selecao_uruguai_22_23_versao_fan_513_1_21602f5c86d210cffc898186f7dc6f07.jpg',
-        preco: 119.99
+        title: 'Meia Esportiva Antiderrapante',
+        uri: 'https://http2.mlstatic.com/D_NQ_NP_606963-MLB50676504660_072022-O.webp',
+        preco: 27.99
     },
     {
         id: '3',
-        title: 'Camiseta da Seleção Argentina',
-        uri: 'https://images.tcdn.com.br/img/img_prod/1050340/camisa_selecao_argentina_22_23_versao_fan_501_1_246f155e695efb5f7afeb5a46e04ca07.jpg',
-        preco: 199.99
+        title: 'Caneleira de Futebol Nike',
+        uri: 'https://imgcentauro-a.akamaihd.net/768x768/51943902.jpg',
+        preco: 63.99
     },
     {
         id: '4',
-        title: 'Camiseta da Seleção Portugal',
-        uri: 'https://images.tcdn.com.br/img/img_prod/1050340/camisa_i_e_ii_selecao_portugal_22_23_versao_fan_527_1_e1f1ce71f75b4a129ed496ffffc71fbe.jpg',
-        preco: 199.99
+        title: 'Joelheira de Compressão',
+        uri: 'https://imgcentauro-a.akamaihd.net/768x768/M0R0E402.jpg',
+        preco: 98.99
     },
     {
         id: '5',
-        title: 'Camiseta da Seleção Alemanha',
-        uri: 'https://images.tcdn.com.br/img/img_prod/1050340/camisa_retro_selecao_alemanha_1990_1933_1_2d52392f291dd9bddb140935865fdce6.jpg',
-        preco: 199.99
+        title: 'Sacola Nike Brasilia 9.5',
+        uri: 'https://imgcentauro-a.akamaihd.net/768x768/M11TDR07.jpg',
+        preco: 99.99
     },
 ];
 
@@ -81,10 +80,13 @@ const Camisetas = ({ navigation }) => {
                 renderItem={renderItemNovo}
                 keyExtractor={item => item.id}
                 ListFooterComponent={
-                    <Button onPress={() => navigation.navigate('Home')} title="Home"/>
-                }
+                    <Button
+                        onPress={() => navigation.navigate('Home')}
+                        title="Home"
+                    />}
             />
         </SafeAreaView>
+
     )
 }
 
