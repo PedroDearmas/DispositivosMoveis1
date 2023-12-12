@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-import Camisetas from './src/screens/Camisetas';
 import Home from './src/screens/Home';
-import Calções from './src/screens/Calções';
-import Tênis from './src/screens/Tênis';
-import Acessórios from './src/screens/Acessórios';
+import Camisetas from './src/screens/Camisetas';
+import Calcoes from './src/screens/Calcoes';
+import Tenis from './src/screens/Tenis';
+import Acessorios from './src/screens/Acessorios';
+import Confirmacao from './src/screens/Confirmacao';
 
 const Drawer = createDrawerNavigator();
 
@@ -15,10 +16,17 @@ export default function App() {
       <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen name="Home" component={Home} />
         <Drawer.Screen name="Camisetas" component={Camisetas} />
-        <Drawer.Screen name="Calções" component={Calções} />
-        <Drawer.Screen name="Tênis" component={Tênis} />
-        <Drawer.Screen name="Acessórios" component={Acessórios} />
+        <Drawer.Screen name="Calcoes" component={Calcoes} />
+        <Drawer.Screen name="Tenis" component={Tenis} />
+        <Drawer.Screen name="Acessorios" component={Acessorios} />
+        <Drawer.Screen name="Agradecimento" component={Confirmacao}
+          options={{
+            drawerItemStyle: {
+              display: 'none'
+            }
+          }} />
       </Drawer.Navigator>
+
     </NavigationContainer>
   );
 }

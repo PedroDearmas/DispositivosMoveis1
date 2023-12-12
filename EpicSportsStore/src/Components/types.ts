@@ -3,5 +3,4 @@ export interface ICard {
     title: string;
     uri: string;
     preco :  number;
-    countItens: (id:number) => void;
 }

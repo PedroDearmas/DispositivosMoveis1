@@ -2,45 +2,45 @@ import { View, Text, Pressable, Image, StatusBar, StyleSheet, SafeAreaView, Flat
 import React, { useState } from 'react'
 import Card from '../Components/Card'
 import { ICard } from '../Components/types';
+import { useNavigation } from '@react-navigation/native';
 import * as Speech from 'expo-speech';
-import Confirmação from './Confirmacao';
 
 const DATA = [
     {
         id: '1',
-        title: 'Camiseta da Seleção Brasil',
-        uri: 'https://images.tcdn.com.br/img/img_prod/1050340/camisa_i_selecao_brasileira_22_23_versao_fan_2169_1_23a746b83aa942fe995182dc95d48c04.jpg',
-        preco: 119.99
+        title: 'Calção Umbro',
+        uri: 'https://imgcentauro-a.akamaihd.net/768x768/88874702.jpg',
+        preco: 54.99
     },
     {
         id: '2',
-        title: 'Camiseta da Seleção Uruguai',
-        uri: 'https://images.tcdn.com.br/img/img_prod/1050340/camisa_selecao_uruguai_22_23_versao_fan_513_1_21602f5c86d210cffc898186f7dc6f07.jpg',
-        preco: 119.99
+        title: 'Calção Nike',
+        uri: 'https://imgcentauro-a.akamaihd.net/768x768/96291131.jpg',
+        preco: 69.99
     },
     {
         id: '3',
-        title: 'Camiseta da Seleção Argentina',
-        uri: 'https://images.tcdn.com.br/img/img_prod/1050340/camisa_selecao_argentina_22_23_versao_fan_501_1_246f155e695efb5f7afeb5a46e04ca07.jpg',
-        preco: 199.99
+        title: 'Calção Adidas',
+        uri: 'https://imgcentauro-a.akamaihd.net/768x768/98392502A3.jpg',
+        preco: 84.99
     },
     {
         id: '4',
-        title: 'Camiseta da Seleção Portugal',
-        uri: 'https://images.tcdn.com.br/img/img_prod/1050340/camisa_i_e_ii_selecao_portugal_22_23_versao_fan_527_1_e1f1ce71f75b4a129ed496ffffc71fbe.jpg',
-        preco: 199.99
+        title: 'Calção Puma',
+        uri: 'https://imgcentauro-a.akamaihd.net/768x768/98442302.jpg',
+        preco: 84.99
     },
     {
         id: '5',
-        title: 'Camiseta da Seleção Alemanha',
-        uri: 'https://images.tcdn.com.br/img/img_prod/1050340/camisa_retro_selecao_alemanha_1990_1933_1_2d52392f291dd9bddb140935865fdce6.jpg',
-        preco: 199.99
+        title: 'Calção Kappa',
+        uri: 'https://imgcentauro-a.akamaihd.net/768x768/84601102.jpg',
+        preco: 51.90
     },
 ];
 
 
 
-const Camisetas = ({ navigation }) => {
+const Calcoes = ({ navigation }) => {
     const renderItemNovo = ({ item }) => {
         return <View style={meuestilo.item} key={item.id}>
             <Pressable
@@ -103,4 +103,4 @@ const meuestilo = StyleSheet.create({
     },
 });
 
-export default Camisetas
+export default Calcoes
